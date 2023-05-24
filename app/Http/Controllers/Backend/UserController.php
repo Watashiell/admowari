@@ -9,6 +9,6 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('backend.user');
+        return view('user');
     }
 }
