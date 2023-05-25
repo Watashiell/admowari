@@ -1,5 +1,7 @@
 @extends('backend/layouts.template')
 
+@section('content')
+
 <!-- @section('content') -->
 
 <!DOCTYPE html>
