@@ -11,4 +11,9 @@ class DashboardController extends Controller
     {
         return view('backend.dashboard');
     }
+
+    public function user()
+    {
+        return view('backend.user.user');
+    }
 }

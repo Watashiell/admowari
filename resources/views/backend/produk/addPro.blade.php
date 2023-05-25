@@ -1,104 +1,9 @@
-@extends('backend/layouts.template')
-
 @section('content')
 
 
 <!DOCTYPE html>
 <html lang="en">
-<!-- <?php
-include("../connection/connect.php");
-error_reporting(0);
-session_start();
 
-
-
-
-if (isset($_POST['submit'])) {
-
-
-
-
-
-
-
-    if (empty($_POST['d_name']) || empty($_POST['about']) || $_POST['price'] == '' || $_POST['res_name'] == '') {
-        $error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Semua Kolom Harus Diisi!</strong>
-															</div>';
-
-
-
-    } else {
-
-        $fname = $_FILES['file']['name'];
-        $temp = $_FILES['file']['tmp_name'];
-        $fsize = $_FILES['file']['size'];
-        $extension = explode('.', $fname);
-        $extension = strtolower(end($extension));
-        $fnew = uniqid() . '.' . $extension;
-
-        $store = "Res_img/dishes/" . basename($fnew);
-
-        if ($extension == 'jpg' || $extension == 'png' || $extension == 'gif') {
-            if ($fsize >= 1000000) {
-
-
-                $error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>Max Image Size is 1024kb!</strong> Try different Image.
-															</div>';
-
-            } else {
-
-
-
-
-                $sql = "INSERT INTO dishes(rs_id,title,slogan,price,img) VALUE('" . $_POST['res_name'] . "','" . $_POST['d_name'] . "','" . $_POST['about'] . "','" . $_POST['price'] . "','" . $fnew . "')"; // store the submited data ino the database :images
-                mysqli_query($db, $sql);
-                move_uploaded_file($temp, $store);
-
-                $success = '<div class="alert alert-success alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																 Menu Baru Telah Ditambahkan.
-															</div>';
-
-
-            }
-        } elseif ($extension == '') {
-            $error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>select image</strong>
-															</div>';
-        } else {
-
-            $error = '<div class="alert alert-danger alert-dismissible fade show">
-																<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-																<strong>invalid extension!</strong>png, jpg, Gif are accepted.
-															</div>';
-
-
-        }
-
-
-    }
-
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-?> -->
 
 <head>
     <meta charset="utf-8">
@@ -179,46 +84,7 @@ if (isset($_POST['submit'])) {
             </nav>
         </div>
 
-        <div class="left-sidebar">
-
-            <div class="scroll-sidebar">
-
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
-                        <li> <a href="users.html"> <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Category</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_category.html">All Category</a></li>
-                                <li><a href="add_tag.html">Add Tag</a></li>
-                                <li><a href="add_category.html">Add Category</a></li>
-
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fa fa-cutlery"
-                                    aria-hidden="true"></i><span class="hide-menu">Product</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_product.html">All Product</a></li>
-                                <li><a href="add_product.html">Add Product</a></li>
-
-
-                            </ul>
-                        </li>
-                        <li> <a href="all_orders.html"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Orders</span></a></li>
-
-                    </ul>
-                </nav>
-
-            </div>
-
-        </div>
+        @include('backend/layouts.sidebar')
 
         <div class="page-wrapper">
 
@@ -227,9 +93,6 @@ if (isset($_POST['submit'])) {
             <div class="container-fluid">
                 <!-- Start Page Content -->
 
-
-                <!-- <?php echo $error;
-                echo $success; ?> -->
 
 
 
@@ -305,14 +168,7 @@ if (isset($_POST['submit'])) {
                                             <select name="res_name" class="form-control custom-select"
                                                 data-placeholder="Choose a Category" tabindex="1">
                                                 <option>--Kategori--</option>
-                                                <!-- <?php $ssql = "select * from restaurant";
-                                                    $res = mysqli_query($db, $ssql);
-                                                    while ($row = mysqli_fetch_array($res)) {
-                                                        echo ' <option value="' . $row['rs_id'] . '">' . $row['title'] . '</option>';
-                                                        ;
-                                                    }
 
-                                                    ?> -->
                                             </select>
                                         </div>
                                     </div>

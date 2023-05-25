@@ -16,3 +16,19 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('auth:api')->get('/allCat', function (Request $request) {
+    return $request->allCat();
+});
+
+Route::middleware('auth:api')->get('/addCat', function (Request $request) {
+    return $request->addCat();
+});
+
+Route::middleware('auth:api')->get('/allPro', function (Request $request) {
+    return $request->allPro();
+});
+
+Route::middleware('auth:api')->get('/addPro', function (Request $request) {
+    return $request->addPro();
+});

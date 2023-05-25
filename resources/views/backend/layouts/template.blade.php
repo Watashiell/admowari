@@ -31,7 +31,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-light">
 
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="dashboard.php">
+                    <a class="navbar-brand" href="{{ url('dashboard')}}">
 
                         <span><img src="{{ asset('backend/images/lo.png')}}" alt="homepage" class="dark-logo" /></span>
                     </a>
@@ -84,7 +84,8 @@
                                             <!-- <h2>
                
                                             </h2> -->
-                                            <p class="m-b-0">Category</p>
+                                            <p class="m-b-0"> Category</p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -110,7 +111,7 @@
                                 <div class="card p-30">
                                     <div class="media">
                                         <div class="media-left meida media-middle">
-                                            <span><i class="fa fa-users f-s-40"></i></span>
+                                            <span><i class="fa fa-users f-s-40" href="{{ url('user')}}"></i></span>
                                         </div>
                                         <div class="media-body media-text-right">
                                             <h2>

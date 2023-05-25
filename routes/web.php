@@ -36,7 +36,10 @@ Route::group(['namespace' => 'Backend'], function () {
 Route::group(['namespace' => 'Backend'], function () {
     Route::resource('dashboard', 'DashboardController');
     Route::resource('user', 'UserController');
-    Route::resource('pendidikan', 'PendidikanController');
+    Route::resource('allCat', 'allCatController');
+    Route::resource('addCat', 'addCatController');
+    Route::resource('allPro', 'allProController');
+    Route::resource('addPro', 'addProController');
 });
 
 Route::get('/session/create', 'SessionController@create');

@@ -79,52 +79,13 @@
                                     <li><a href="logout.php"><i class="fa fa-power-off"></i> Logout</a></li>
                                 </ul>
                             </div>
+
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
-
-        <div class="left-sidebar">
-
-            <div class="scroll-sidebar">
-
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav">
-                        <li class="nav-devider"></li>
-                        <li class="nav-label">Home</li>
-                        <li> <a href="dashboard.html"><i class="fa fa-tachometer"></i><span>Dashboard</span></a></li>
-                        <li class="nav-label">Log</li>
-                        <li> <a href="users.html"> <span><i class="fa fa-user f-s-20 "></i></span><span>Users</span></a>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i
-                                    class="fa fa-archive f-s-20 color-warning"></i><span
-                                    class="hide-menu">Category</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_category.html">All Category</a></li>
-                                <li><a href="add_tag.html">Add Tag</a></li>
-                                <li><a href="add_category.html">Add Category</a></li>
-
-                            </ul>
-                        </li>
-                        <li> <a class="has-arrow  " href="#" aria-expanded="false"><i class="fas fa-tshirt"
-                                    aria-hidden="true"></i><span class="hide-menu">Product</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="all_product.html">All Product</a></li>
-                                <li><a href="add_product.html">Add Product</a></li>
-
-
-                            </ul>
-                        </li>
-                        <li> <a href="all_orders.html"><i class="fa fa-shopping-cart"
-                                    aria-hidden="true"></i><span>Orders</span></a></li>
-
-                    </ul>
-                </nav>
-
-            </div>
-
-        </div>
+        @include('backend/layouts.sidebar')
 
         <div class="page-wrapper">
 
@@ -162,50 +123,8 @@
                                         </thead>
 
                                         <tbody>
-                                            <!-- 
-
-                                            <?php
-                                            $sql = "SELECT * FROM restaurant order by rs_id desc";
-                                            $query = mysqli_query($db, $sql);
-
-                                            if (!mysqli_num_rows($query) > 0) {
-                                                echo '<td colspan="11"><center>No Restaurants</center></td>';
-                                            } else {
-                                                while ($rows = mysqli_fetch_array($query)) {
-
-                                                    $mql = "SELECT * FROM res_category where c_id='" . $rows['c_id'] . "'";
-                                                    $res = mysqli_query($db, $mql);
-                                                    $row = mysqli_fetch_array($res);
-
-                                                    echo ' <tr><td>' . $row['c_name'] . '</td>
-																								<td>' . $rows['title'] . '</td>
-																								<td>' . $rows['email'] . '</td>
-																								<td>' . $rows['phone'] . '</td>
-																								<td>' . $rows['url'] . '</td>
-																								
-																								
-																								<td>' . $rows['o_hr'] . '</td>
-																								<td>' . $rows['c_hr'] . '</td>
-																								<td>' . $rows['o_days'] . '</td>
-																								
-																								<td>' . $rows['deskripsi'] . '</td>
-																								
-																								<td><div class="col-md-3 col-lg-8 m-b-10">
-																								<center><img src="Res_img/' . $rows['image'] . '" class="img-responsive radius"  style="min-width:150px;min-height:100px;"/></center>
-																								</div></td>
-																								
-																								<td>' . $rows['date'] . '</td>
-																									 <td><a href="delete_restaurant.php?res_del=' . $rows['rs_id'] . '" class="btn btn-danger btn-flat btn-addon btn-xs m-b-10"><i class="fa fa-trash-o" style="font-size:16px"></i></a> 
-																									 <a href="update_restaurant.php?res_upd=' . $rows['rs_id'] . '" class="btn btn-info btn-flat btn-addon btn-sm m-b-10 m-l-5"><i class="fa fa-edit"></i></a>
-																									</td></tr>';
 
 
-
-                                                }
-                                            }
-
-
-                                            ?> -->
 
 
 
