@@ -28,7 +28,8 @@
     <div class="form">
         <div class="thumbnail"><img src="{{ asset('backend/images/owari.png')}}" /></div>
 
-        <form class="login-form" action="{{ url('dashboard')}}" method="get">
+        <form class="login-form" action="{{ url('dashboard')}}" method="post">
+            @csrf
             <input type="text" placeholder="Username" name="username" />
             <input type="password" placeholder="Password" name="password" />
             <input type="submit" name="submit" value="Login" />

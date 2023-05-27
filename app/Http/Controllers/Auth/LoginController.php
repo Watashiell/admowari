@@ -28,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = RouteServiceProvider::DASHBOARD;
 
     /**
      * Create a new controller instance.
@@ -55,7 +55,7 @@ class LoginController extends Controller
         ];
 
         if (auth()->attempt($login)) {
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }
 
         return redirect()->route('login')->with(['error' => 'Email/Password salah!']);

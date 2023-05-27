@@ -19,22 +19,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['namespace' => 'Backend'], function () {
-    Route::resource('dashboard', 'DashboardController');
+Route::get('/logout', function () {
+    return view('welcome');
 });
+
 
 Auth::routes();
 
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['namespace' => 'Backend'], function () {
-    Route::resource('dashboard', 'DashboardController');
-    Route::resource('pendidikan', 'PendidikanController');
-    Route::resource('pengalaman_kerja', 'PengalamanKerjaController');
-});
+
+
 
 Route::group(['namespace' => 'Backend'], function () {
-    Route::resource('dashboard', 'DashboardController');
+   
     Route::resource('user', 'UserController');
     Route::resource('allCat', 'allCatController');
     Route::resource('addCat', 'addCatController');
