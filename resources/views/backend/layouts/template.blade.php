@@ -51,11 +51,15 @@
                             aria-haspopup="true" aria-expanded="false"><img
                                 src="{{ asset('backend/images/bookingSystem/user-icn.png')}}" alt="user"
                                 class="profile-pic" /></a>
-                        <div class="dropdown-menu dropdown-menu-right animated zoomIn">
-                            <ul class="dropdown-user">
-                                <li><a href="{{ route('logout') }}"><i class="fa fa-power-off"></i> Logout</a>
-                                </li>
-                            </ul>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </div>
                     </li>
                     </ul>

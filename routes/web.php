@@ -20,14 +20,14 @@ Route::get('/', function () {
 });
 
 Route::get('/logout', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 
