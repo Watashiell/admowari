@@ -14,9 +14,10 @@ use Illuminate\Http\Request;
 */
 
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:api')->get('/dashboard', function (Request $request) {
+    return $request->dashboard();
 });
+
 
 Route::middleware('auth:api')->get('/allCat', function (Request $request) {
     return $request->allCat();
