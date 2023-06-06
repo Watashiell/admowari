@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetailProfileTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateDetailProfileTable extends Migration
      */
     public function up()
     {
-        Schema::create('detail_profile', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('address');
-            $table->string('nomor_tlp');
-            $table->date('ttl');
-            $table->string('foto');
+        Schema::create('category', function (Blueprint $table) {
+            $table->bigIncrements('cat_id');
+            $table->integer('tag_id');
+            $table->string('judul', 255);
+            $table->text('deskripsi');
+            $table->binary('image');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateDetailProfileTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_profile');
+        Schema::dropIfExists('category');
     }
 }

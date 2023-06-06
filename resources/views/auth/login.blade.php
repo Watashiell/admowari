@@ -31,15 +31,11 @@
     <div class="form">
         <div class="thumbnail"><img src="{{ asset('backend/images/owari.png')}}" /></div>
 
-        <form class="login-form" action="{{ route('dashboard') }}" method="post">
+        <form class="login-form" action="{{ route('login') }}" method="post">
             @csrf
             <input type="text" placeholder="Username" name="username" />
             <input type="password" placeholder="Password" name="password" />
-            <div class="form-group row mb-0">
-                <div class="col-md-8 offset-md-4">
-                    <button type="submit" class="btn btn-primary">
-                        {{ __('Login') }}
-                    </button>
+            <input type="submit" name="submit" value="Login" />
 
         </form>
 

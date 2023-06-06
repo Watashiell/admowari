@@ -11,7 +11,7 @@
 |
 */
 
-use App\Http\Controllers\MahasiswaController;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -20,21 +20,20 @@ Route::get('/', function () {
 });
 
 Route::get('/logout', function () {
-    return view('auth.login');
+    return view('login');
 });
 
 
 Auth::routes();
 
-
-Route::post('/dashboard', 'DashboardController@index')->name('dashboard')->middleware('auth');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 
 
 
 
 Route::group(['namespace' => 'Backend'], function () {
-   
+
     Route::resource('user', 'UserController');
     Route::resource('allCat', 'allCatController');
     Route::resource('addCat', 'addCatController');
